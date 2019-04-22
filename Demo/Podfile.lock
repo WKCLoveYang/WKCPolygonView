@@ -1,0 +1,16 @@
+PODS:
+  - WKCPolygonView (1.0.1)
+
+DEPENDENCIES:
+  - WKCPolygonView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - WKCPolygonView
+
+SPEC CHECKSUMS:
+  WKCPolygonView: 3fc4b1fddcf99699bb349b7a79011d13b38de583
+
+PODFILE CHECKSUM: 27b13e51b8baa6468cd066e51a3fbd8cda83724f
+
+COCOAPODS: 1.7.0.beta.3
