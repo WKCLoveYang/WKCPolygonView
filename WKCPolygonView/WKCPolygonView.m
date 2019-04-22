@@ -1,16 +1,16 @@
 //
-//  SLCPolygonView.m
-//  SLCPolygonView
+//  WKCPolygonView.m
+//  WKCPolygonView
 //
 //  Created by 魏昆超 on 2018/11/14.
 //  Copyright © 2018 魏昆超. All rights reserved.
 //
 
-#import "SLCPolygonView.h"
+#import "WKCPolygonView.h"
 
-#define SLC_RADIANS(angle) ((angle) / 180.0 * M_PI)
+#define WKC_RADIANS(angle) ((angle) / 180.0 * M_PI)
 
-@interface SLCPolygonView()
+@interface WKCPolygonView()
 
 @property (nonatomic, strong) NSArray <NSNumber *> * percentages;
 @property (nonatomic, assign) CGFloat sideLength;
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation SLCPolygonView
+@implementation WKCPolygonView
 
 - (instancetype)initWithPercentageValues:(NSArray <NSNumber *> *)percentages
                               sideLength:(CGFloat)sLength
@@ -44,7 +44,7 @@
 {
     _percentages = percentages;
     
-    self.centerLength = _sideLength / ( 2 * cos(SLC_RADIANS((percentages.count - 2) * 180 / (percentages.count * 2))));
+    self.centerLength = _sideLength / ( 2 * cos(WKC_RADIANS((percentages.count - 2) * 180 / (percentages.count * 2))));
     self.centerPoint = CGPointMake(_centerLength,
                                    _centerLength);
     self.itemSize = CGSizeMake(2 * _centerLength,
@@ -61,8 +61,8 @@
     for (NSInteger index = 0; index < _percentages.count; index ++) {
         
         CGFloat angle = 360 / _percentages.count * index;
-        CGFloat pChangeX = -_centerLength * sin(SLC_RADIANS(-angle));
-        CGFloat pChangeY = -_centerLength * cos(SLC_RADIANS(-angle));
+        CGFloat pChangeX = -_centerLength * sin(WKC_RADIANS(-angle));
+        CGFloat pChangeY = -_centerLength * cos(WKC_RADIANS(-angle));
         CGFloat progress = _percentages[index].floatValue / 100;
         
         NSValue * point = [self slc_pointChangeX:pChangeX
